@@ -1,5 +1,7 @@
 # halloween-svg
 
+:jack_o_lantern: Halloween SVGs :ghost:
+
 ## Project setup
 ```
 yarn install
