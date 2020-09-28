@@ -1,5 +1,7 @@
 language: node_js
 node_js: 14
-script: yarn lint
+script:
+  - yarn lint
+  - yarn build
 notifications:
   email: false
