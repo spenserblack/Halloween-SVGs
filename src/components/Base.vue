@@ -27,7 +27,8 @@ export default class BaseSvg extends Vue {
   @Prop({type: Number, default: 100}) readonly viewBoxLength!: number;
 
   get viewbox() {
-    return `${this.viewBoxX} ${this.viewBoxY} ${this.viewBoxWidth} ${this.viewBoxLength}`;
+    const {viewBoxX, viewBoxY, viewBoxWidth, viewBoxLength} = this;
+    return `${viewBoxX} ${viewBoxY} ${viewBoxWidth} ${viewBoxLength}`;
   }
 }
 </script>
