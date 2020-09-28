@@ -1,18 +1,52 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
   'extends': [
     'plugin:vue/essential',
     'eslint:recommended',
-    '@vue/typescript/recommended'
+    '@vue/typescript/recommended',
   ],
+  ignorePatterns: ['babel.config.js', 'src/main.ts', 'src/shims*.d.ts'],
   parserOptions: {
-    ecmaVersion: 2020
+    ecmaVersion: 2020,
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
-  }
-}
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-await-in-loop': 'warn',
+    'array-callback-return': 'warn',
+    'default-param-last': 'error',
+    'no-multi-spaces': 'warn',
+    'no-param-reassign': 'error',
+    'prefer-regex-literals': 'warn',
+    yoda: 'warn',
+    'brace-style': 'warn',
+    'comma-dangle': ['warn', 'always-multiline'],
+    'comma-spacing': 'warn',
+    'comma-style': 'warn',
+    'key-spacing': 'warn',
+    'keyword-spacing': ['warn', {overrides: {catch: {after: false}}}],
+    'max-len': 'warn',
+    'no-multiple-empty-lines': ['warn', {max: 2, maxEOF: 0, maxBOF: 0}],
+    'no-tabs': 'error',
+    quotes: ['warn', 'single', {avoidEscape: true}],
+    semi: 'error',
+    'space-before-function-paren': ['warn', 'never'],
+    'spaced-comment': 'warn',
+    'no-duplicate-imports': 'warn',
+    'no-var': 'error',
+    'prefer-const': 'warn',
+    'object-shorthand': 'error',
+    'prefer-destructuring': 'warn',
+    'prefer-template': 'warn',
+    'sort-imports': 'warn',
+    'sort-vars': 'warn',
+    // EditorConfig compliance
+    'eol-last': 'error',
+    indent: ['error', 2],
+    'linebreak-style': 'error',
+    'no-trailing-spaces': 'error',
+  },
+};
