@@ -3,7 +3,7 @@
     xmlns='http://www.w3.org/2000/svg'
     :height='height'
     :width='width'
-    viewBox='0 0 240 80'
+    :viewBox='viewbox'
     :aria-labelledby='svgName'
     role='img'
   )
@@ -21,5 +21,13 @@ export default class BaseSvg extends Vue {
   @Prop({type: Number, default: 45}) readonly width!: number;
   @Prop({type: String, default: 'currentColor'}) readonly svgColor!: string;
   @Prop({type: String, required: true}) readonly svgName!: string;
+  @Prop({type: Number, default: 0}) readonly viewBoxX!: number;
+  @Prop({type: Number, default: 0}) readonly viewBoxY!: number;
+  @Prop({type: Number, default: 100}) readonly viewBoxWidth!: number;
+  @Prop({type: Number, default: 100}) readonly viewBoxLength!: number;
+
+  get viewbox() {
+    return `${this.viewBoxX} ${this.viewBoxY} ${this.viewBoxWidth} ${this.viewBoxLength}`;
+  }
 }
 </script>
