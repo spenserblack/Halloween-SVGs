@@ -1,13 +1,17 @@
 <template lang='pug'>
   #app
-    p Hello, World!
+    BaseSvg(:height='100' :width='200' svgName='hello-world' svgColor='white')
+      text(x='0' y='50' stroke='black') Hello, World
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import BaseSvg from './components/Base.vue';
 
 @Component({
-  components: {},
+  components: {
+    BaseSvg,
+  },
 })
 export default class App extends Vue {}
 </script>
