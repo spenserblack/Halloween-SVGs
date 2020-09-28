@@ -1,5 +1,7 @@
 # halloween-svg
 
+[![Build Status](https://travis-ci.com/spenserblack/Halloween-SVGs.svg?branch=master)](https://travis-ci.com/spenserblack/Halloween-SVGs)
+
 :jack_o_lantern: Halloween SVGs :ghost:
 
 ## Project setup
