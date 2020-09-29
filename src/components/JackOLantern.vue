@@ -20,16 +20,32 @@
       fill='none'
       d='M 75 10 V 95'
     )
+    Eye(
+      :x='45'
+      :y='40'
+      :radius='15'
+      :stroke='pumpkinSecondary'
+      :lit='lit'
+    )
+    Eye(
+      :x='105'
+      :y='40'
+      :radius='15'
+      :stroke='pumpkinSecondary'
+      :lit='lit'
+    )
 </template>
 
 <script lang='ts'>
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Intersection, ShapeInfo} from 'kld-intersections';
 import BaseSvg from './Base.vue';
+import Eye from './JOLEye.vue';
 
 @Component({
   components: {
     BaseSvg,
+    Eye,
   },
 })
 export default class JackOLantern extends Vue {
@@ -42,6 +58,7 @@ export default class JackOLantern extends Vue {
   }) readonly pumpkinSecondary!: string;
   @Prop({type: Number, default: 7}) readonly ridges!: number;
   @Prop({type: String, default: 'jack-o-lantern'}) readonly svgName!: string;
+  @Prop({type: Boolean, default: true}) readonly lit!: boolean;
 
   readonly viewBoxHeight = 100;
   readonly viewBoxWidth = 150;

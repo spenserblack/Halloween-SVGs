@@ -3,7 +3,10 @@
     label(for='ridge-input') Ridges: {{ ridges }}
     input#ridge-input(type='range' v-model.number='ridges' min='4' max='11')
     br
-    JackOLantern(:height='300' :width='450' :ridges='ridges')
+    input#lit-input(type='checkbox' v-model='lit')
+    label(for='lit-input') {{ lightPrompt }}
+    br
+    JackOLantern(:height='300' :width='450' :ridges='ridges' :lit='lit')
 </template>
 
 <script lang="ts">
@@ -17,6 +20,11 @@ import JackOLantern from './components/JackOLantern.vue';
 })
 export default class App extends Vue {
   ridges = 7;
+  lit = false;
+
+  get lightPrompt() {
+    return `${this.lit ? 'Extinguish' : 'Light'} the Jack o' Lantern`;
+  }
 }
 </script>
 
