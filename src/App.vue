@@ -1,6 +1,9 @@
 <template lang='pug'>
   #app
-    JackOLantern(:height='300' :width='450')
+    label(for='ridge-input') Ridges: {{ ridges }}
+    input#ridge-input(type='range' v-model.number='ridges' min='4' max='11')
+    br
+    JackOLantern(:height='300' :width='450' :ridges='ridges')
 </template>
 
 <script lang="ts">
@@ -12,7 +15,9 @@ import JackOLantern from './components/JackOLantern.vue';
     JackOLantern,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  ridges = 7;
+}
 </script>
 
 <style lang="stylus">
