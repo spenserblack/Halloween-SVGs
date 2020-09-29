@@ -14,10 +14,17 @@
       fill='none'
       :d='ridge'
     )
+    path(
+      v-if='drawMiddleRidge'
+      :stroke='pumpkinSecondary'
+      fill='none'
+      d='M 75 10 V 95'
+    )
 </template>
 
 <script lang='ts'>
 import {Component, Prop, Vue} from 'vue-property-decorator';
+import {Intersection, ShapeInfo} from 'kld-intersections';
 import BaseSvg from './Base.vue';
 
 @Component({
@@ -47,8 +54,12 @@ export default class JackOLantern extends Vue {
     'Z',
   ].join(' ');
 
+  get drawMiddleRidge() {
+    return Boolean(this.ridges & 1);
+  }
+
   get ridgePaths() {
-    const isOdd = Boolean(this.ridges & 1);
+    const pumpkinShapeInfo = ShapeInfo.path(this.pumpkinBody);
     const halfRidges = this.ridges >> 1;
     const halfWidth = this.viewBoxWidth >> 1;
     const halfHeight =this.viewBoxHeight >> 1;
@@ -62,16 +73,22 @@ export default class JackOLantern extends Vue {
       ridges[ridges.length + ~i] = ridge;
     }
 
-    if (isOdd) {
-      ridges[halfRidges] = 0;
-    }
-
-    return ridges.map(ridge => {
+    return ridges.filter(ridge => ridge != null).map(ridge => {
       const curve = halfWidth + ridge * ratio;
       const ridgeLocation = halfWidth + curve >> 1;
-      return [
+      const curvePath = [
         `M ${ridgeLocation} 0`,
         `S ${curve} ${halfHeight}, ${ridgeLocation} ${this.viewBoxHeight}`,
+      ].join(' ');
+      const curveShapeInfo = ShapeInfo.path(curvePath);
+      const [curveStart, curveEnd] = Intersection.intersect(
+        pumpkinShapeInfo,
+        curveShapeInfo,
+      ).points;
+
+      return [
+        `M ${curveStart.x} ${curveStart.y}`,
+        `S ${curve} ${halfHeight}, ${curveEnd.x} ${curveEnd.y}`,
       ].join(' ');
     });
   }
