@@ -11,8 +11,8 @@ export default class Eye extends Vue {
   @Prop({type: Number, required: true}) readonly y!: number;
   @Prop({type: Number, required: true}) readonly radius!: number;
   @Prop({type: String, required: true}) readonly stroke!: string;
-  @Prop({type: String, default: 'sienna'}) readonly outFill!: string;
-  @Prop({type: String, default: '#FFED00'}) readonly litFill!: string;
+  @Prop({type: String, required: true}) readonly outFill!: string;
+  @Prop({type: String, required: true}) readonly litFill!: string;
   @Prop({type: Boolean, default: true}) readonly lit!: boolean;
 
   get fill() {

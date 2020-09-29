@@ -26,6 +26,8 @@
       :radius='15'
       :stroke='pumpkinSecondary'
       :lit='lit'
+      :litFill='candleColor'
+      :outFill='shadowColor'
     )
     Eye(
       :x='105'
@@ -33,6 +35,8 @@
       :radius='15'
       :stroke='pumpkinSecondary'
       :lit='lit'
+      :litFill='candleColor'
+      :outFill='shadowColor'
     )
 </template>
 
@@ -59,6 +63,8 @@ export default class JackOLantern extends Vue {
   @Prop({type: Number, default: 7}) readonly ridges!: number;
   @Prop({type: String, default: 'jack-o-lantern'}) readonly svgName!: string;
   @Prop({type: Boolean, default: true}) readonly lit!: boolean;
+  @Prop({type: String, default: '#FFED00'}) readonly candleColor!: string;
+  @Prop({type: String, default: 'sienna'}) readonly shadowColor!: string;
 
   readonly viewBoxHeight = 100;
   readonly viewBoxWidth = 150;
