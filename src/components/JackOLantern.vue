@@ -44,7 +44,7 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Intersection, ShapeInfo} from 'kld-intersections';
 import BaseSvg from './Base.vue';
-import Eye from './JOLEye.vue';
+import Eye from './JOL/Eye.vue';
 
 @Component({
   components: {
