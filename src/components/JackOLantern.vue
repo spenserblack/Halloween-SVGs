@@ -38,6 +38,12 @@
       :litFill='candleColor'
       :outFill='shadowColor'
     )
+    ToothySmile(
+      :stroke='pumpkinSecondary'
+      :lit='lit'
+      :litFill='candleColor'
+      :outFill='shadowColor'
+    )
 </template>
 
 <script lang='ts'>
@@ -45,11 +51,13 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Intersection, ShapeInfo} from 'kld-intersections';
 import BaseSvg from './Base.vue';
 import Eye from './JOL/Eye.vue';
+import ToothySmile from './JOL/ToothySmile.vue';
 
 @Component({
   components: {
     BaseSvg,
     Eye,
+    ToothySmile,
   },
 })
 export default class JackOLantern extends Vue {
