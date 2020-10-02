@@ -27,6 +27,10 @@
           label(for='primary-color-input') Primary Color
           div.color-example(:style='{backgroundColor: primaryColor}')
           input#primary-color-input(type='text' v-model='primaryColor')
+        td
+          label(for='secondary-color-input') Secondary Color
+          div.color-example(:style='{backgroundColor: secondaryColor}')
+          input#secondary-color-input(type='text' v-model='secondaryColor')
         td(v-if='lit')
           label(for='lit-color-input') Candle Color
           div.color-example(:style='{backgroundColor: litColor}')
@@ -41,6 +45,7 @@
      :ridges='ridges'
      :lit='lit'
      :pumpkinPrimary='primaryColor'
+     :pumpkinSecondary='secondaryColor'
      :candleColor='litColor'
      :shadowColor='shadowColor'
      :smile='smile'
@@ -60,6 +65,7 @@ export default class App extends Vue {
   ridges = 7;
   lit = false;
   primaryColor = 'orange'
+  secondaryColor = 'darkorange'
   litColor = '#FFED00'
   shadowColor = 'sienna'
   smile = 1.0;
