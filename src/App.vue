@@ -39,6 +39,9 @@
           label(for='out-color-input') Shadow Color
           div.color-example(:style='{backgroundColor: shadowColor}')
           input#out-color-input(type='text' v-model='shadowColor')
+    p.hint
+      | You can set the colors to #[code none] to make them invisible.
+      | Setting "Secondary Color" to #[code none] looks like a flat style!
     JackOLantern(
      :height='300'
      :width='450'
@@ -100,4 +103,7 @@ export default class App extends Vue {
     width: dimensions
     margin-left: margins
     margin-right: margins
+  .hint
+    font-size: 0.75em
+    color: DimGray
 </style>
