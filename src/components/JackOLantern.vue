@@ -41,6 +41,7 @@
     ToothySmile(
       :stroke='pumpkinSecondary'
       :lit='lit'
+      :smile='smile'
       :litFill='candleColor'
       :outFill='shadowColor'
     )
@@ -73,6 +74,7 @@ export default class JackOLantern extends Vue {
   @Prop({type: Boolean, default: true}) readonly lit!: boolean;
   @Prop({type: String, default: '#FFED00'}) readonly candleColor!: string;
   @Prop({type: String, default: 'sienna'}) readonly shadowColor!: string;
+  @Prop({type: Number, default: 1}) readonly smile!: number;
 
   readonly viewBoxHeight = 100;
   readonly viewBoxWidth = 150;

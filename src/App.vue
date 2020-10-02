@@ -21,6 +21,16 @@
           label(for='out-color-input') Shadow Color
           div.color-example(:style='{backgroundColor: shadowColor}')
           input#out-color-input(type='text' v-model='shadowColor')
+        tr
+          td
+            label(for='smile-input') Smile: {{ smile }}
+            input#smile-input(
+              type='range'
+              v-model.number='smile'
+              min='-1'
+              max='1'
+              step='0.1'
+            )
     JackOLantern(
      :height='300'
      :width='450'
@@ -28,6 +38,7 @@
      :lit='lit'
      :candleColor='litColor'
      :shadowColor='shadowColor'
+     :smile='smile'
     )
 </template>
 
@@ -45,6 +56,7 @@ export default class App extends Vue {
   lit = false;
   litColor = '#FFED00'
   shadowColor = 'sienna'
+  smile = 1.0;
 
   get lightPrompt() {
     return `${this.lit ? 'Extinguish' : 'Light'} the Jack o' Lantern`;
