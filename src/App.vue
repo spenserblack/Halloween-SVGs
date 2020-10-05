@@ -22,6 +22,9 @@
             max='1'
             step='0.1'
           )
+        td
+          input#tooth-type-input(type='checkbox' v-model='sharpTeeth')
+          label(for='tooth-type-input') Sharp Teeth
       tr
         td
           label(for='primary-color-input') Primary Color
@@ -52,6 +55,7 @@
      :candleColor='litColor'
      :shadowColor='shadowColor'
      :smile='smile'
+     :sharpTeeth='sharpTeeth'
     )
 </template>
 
@@ -72,6 +76,7 @@ export default class App extends Vue {
   litColor = '#FFED00'
   shadowColor = 'sienna'
   smile = 1.0;
+  sharpTeeth = false;
 
   get lightPrompt() {
     return `${this.lit ? 'Extinguish' : 'Light'} the Jack o' Lantern`;

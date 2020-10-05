@@ -38,7 +38,16 @@
       :litFill='candleColor'
       :outFill='shadowColor'
     )
+    SharpSmile(
+      v-if='sharpTeeth'
+      :stroke='pumpkinSecondary'
+      :lit='lit'
+      :smile='smile'
+      :litFill='candleColor'
+      :outFill='shadowColor'
+    )
     ToothySmile(
+      v-else
       :stroke='pumpkinSecondary'
       :lit='lit'
       :smile='smile'
@@ -52,6 +61,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Intersection, ShapeInfo} from 'kld-intersections';
 import BaseSvg from './Base.vue';
 import Eye from './JOL/Eye.vue';
+import SharpSmile from './JOL/SharpSmile.vue';
 import ToothySmile from './JOL/ToothySmile.vue';
 
 @Component({
@@ -59,6 +69,7 @@ import ToothySmile from './JOL/ToothySmile.vue';
     BaseSvg,
     Eye,
     ToothySmile,
+    SharpSmile,
   },
 })
 export default class JackOLantern extends Vue {
@@ -75,6 +86,7 @@ export default class JackOLantern extends Vue {
   @Prop({type: String, default: '#FFED00'}) readonly candleColor!: string;
   @Prop({type: String, default: 'sienna'}) readonly shadowColor!: string;
   @Prop({type: Number, default: 1}) readonly smile!: number;
+  @Prop({type: Boolean, required: true}) readonly sharpTeeth!: boolean;
 
   readonly viewBoxHeight = 100;
   readonly viewBoxWidth = 150;
