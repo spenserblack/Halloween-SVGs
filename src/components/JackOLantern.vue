@@ -104,9 +104,10 @@ export default class JackOLantern extends Vue {
   stemPath = [
     'M 68 8.75',
     'S 75 15, 82 8.75',
-    'C 78 8, 78 5, 76 3',
-    'S 72 3, 74 6',
-    'S 72 8.75, 68 8.75',
+    'H 80',
+    'L 77 3',
+    'H 73',
+    'L 70 8.75',
     'Z',
   ].join(' ');
 
