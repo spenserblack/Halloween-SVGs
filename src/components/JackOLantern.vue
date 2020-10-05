@@ -20,6 +20,7 @@
       fill='none'
       d='M 75 10 V 95'
     )
+    path(:d='stemPath' fill='green' stroke='darkgreen')
     Eye(
       :x='45'
       :y='40'
@@ -96,6 +97,14 @@ export default class JackOLantern extends Vue {
     'C 125 0, 140 10, 140, 50',
     'C 140 85, 120 95, 75 95',
     'C 30 95, 10 85, 10 50',
+    'Z',
+  ].join(' ');
+  stemPath = [
+    'M 68 8.75',
+    'S 75 15, 82 8.75',
+    'C 78 8, 78 5, 76 3',
+    'S 72 3, 74 6',
+    'S 72 8.75, 68 8.75',
     'Z',
   ].join(' ');
 
