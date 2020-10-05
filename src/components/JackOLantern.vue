@@ -20,7 +20,7 @@
       fill='none'
       d='M 75 10 V 95'
     )
-    path(:d='stemPath' fill='green' stroke='darkgreen')
+    path(:d='stemPath' :fill='stemColor' :stroke='stemOutline')
     Eye(
       :x='45'
       :y='40'
@@ -88,6 +88,8 @@ export default class JackOLantern extends Vue {
   @Prop({type: String, default: 'sienna'}) readonly shadowColor!: string;
   @Prop({type: Number, default: 1}) readonly smile!: number;
   @Prop({type: Boolean, required: true}) readonly sharpTeeth!: boolean;
+  @Prop({type: String, default: 'green'}) readonly stemColor!: string;
+  @Prop({type: String, default: 'darkgreen'}) readonly stemOutline!: string;
 
   readonly viewBoxHeight = 100;
   readonly viewBoxWidth = 150;

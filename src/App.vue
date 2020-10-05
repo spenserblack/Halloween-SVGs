@@ -42,9 +42,18 @@
           label(for='out-color-input') Shadow Color
           div.color-example(:style='{backgroundColor: shadowColor}')
           input#out-color-input(type='text' v-model='shadowColor')
+        td
+          label(for='stem-color-input') Stem Color
+          div.color-example(:style='{backgroundColor: stemColor}')
+          input#stem-color-input(type='text' v-model='stemColor')
+        td
+          label(for='stem-outline-input') Stem Outline
+          div.color-example(:style='{backgroundColor: stemOutline}')
+          input#stem-outline-input(type='text' v-model='stemOutline')
     p.hint
       | You can set the colors to #[code none] to make them invisible.
-      | Setting "Secondary Color" to #[code none] looks like a flat style!
+      | Setting "Secondary Color" and "Stem Outline" to #[code none] looks like
+      | a flat style!
     JackOLantern(
      :height='300'
      :width='450'
@@ -54,6 +63,8 @@
      :pumpkinSecondary='secondaryColor'
      :candleColor='litColor'
      :shadowColor='shadowColor'
+     :stemColor='stemColor'
+     :stemOutline='stemOutline'
      :smile='smile'
      :sharpTeeth='sharpTeeth'
     )
@@ -75,6 +86,8 @@ export default class App extends Vue {
   secondaryColor = 'darkorange'
   litColor = '#FFED00'
   shadowColor = 'sienna'
+  stemColor = 'green'
+  stemOutline = 'darkgreen'
   smile = 1.0;
   sharpTeeth = false;
 
