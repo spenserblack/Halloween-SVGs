@@ -25,14 +25,14 @@ export default class SharpSmile extends Smile {
   get leftCorner() {
     return {
       x: leftCorner.x + 10 * this.frown,
-      y: leftCorner.y + 15 * this.frown,
+      y: leftCorner.y + 25 * this.frown,
     };
   }
 
   get rightCorner() {
     return {
       x: rightCorner.x - 10 * this.frown,
-      y: rightCorner.y + 15 * this.frown,
+      y: rightCorner.y + 25 * this.frown,
     };
   }
 
