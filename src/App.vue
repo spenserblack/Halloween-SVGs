@@ -69,14 +69,19 @@
      :smile='smile'
      :sharpTeeth='sharpTeeth'
     )
+    hr
+    h2 Ghost
+    Ghost(:height='300' :width='450')
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Ghost from './components/Ghost.vue';
 import JackOLantern from './components/JackOLantern.vue';
 
 @Component({
   components: {
+    Ghost,
     JackOLantern,
   },
 })
