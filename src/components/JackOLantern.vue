@@ -61,9 +61,9 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {Intersection, ShapeInfo} from 'kld-intersections';
 import BaseSvg from './Base.vue';
-import Eye from './JOL/Eye.vue';
-import SharpSmile from './JOL/SharpSmile.vue';
-import ToothySmile from './JOL/ToothySmile.vue';
+import Eye from './🎃/Eye.vue';
+import SharpSmile from './🎃/SharpSmile.vue';
+import ToothySmile from './🎃/ToothySmile.vue';
 
 @Component({
   components: {
