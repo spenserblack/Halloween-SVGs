@@ -1,5 +1,6 @@
 <template lang='pug'>
   #app
+    h2 Jack o' Lantern
     table.jackolantern-inputs
       tr
         td
