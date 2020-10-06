@@ -7,7 +7,8 @@
     :svgName='svgName'
     :svgColor='primaryColor'
   )
-    text(x='0' :y='viewBoxHeight / 2') Boo, World!
+    g(:stroke='secondaryColor')
+      path(:d='ghostBody')
 </template>
 
 <script lang='ts'>
@@ -26,7 +27,18 @@ export default class Ghost extends Vue {
   @Prop({type: String, default: 'whitesmoke'}) readonly secondaryColor!: string;
   @Prop({type: String, default: 'ghost'}) readonly svgName!: string;
 
-  readonly viewBoxHeight = 100;
+  readonly viewBoxHeight = 150;
   readonly viewBoxWidth = 150;
+  readonly ghostBody = [
+    'M 35 40',
+    'C 35 20, 55 5, 75 5',
+    'C 95 5, 115 20, 115 40',
+    'V 140',
+    [
+      `c ${-80 / 18} -20, ${-80 / 9} -30, ${-80 / 6} -30`,
+      `c ${-80 / 18} 0, ${-80 / 9} 10, ${-80 / 6} 30`,
+    ].join(' ').repeat(3),
+    'Z',
+  ].join(' ');
 }
 </script>
