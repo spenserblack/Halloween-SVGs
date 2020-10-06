@@ -2,7 +2,7 @@
   BaseSvg(
     :height='height'
     :width='width'
-    :viewBoxHeight='viewBoxHeight'
+    :viewBoxLength='viewBoxHeight'
     :viewBoxWidth='viewBoxWidth'
     :svgName='svgName'
     :svgColor='primaryColor'
