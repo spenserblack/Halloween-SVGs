@@ -1,6 +1,6 @@
 <template lang='pug'>
-  #jack-o-lantern-preview.preview
-    table.ghost-inputs
+  Preview#jack-o-lantern-preview
+    table.input-table
       tr
         td
           label(for='primary-color-input') Primary Color
@@ -27,10 +27,12 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
 import Ghost from './components/Ghost.vue';
+import Preview from './Preview.vue';
 
 @Component({
   components: {
     Ghost,
+    Preview,
   },
 })
 export default class GhostPreview extends Vue {
@@ -39,22 +41,3 @@ export default class GhostPreview extends Vue {
   tertiaryColor = 'slategray'
 }
 </script>
-
-<style lang='stylus' scoped>
-  .ghost-inputs
-    margin: auto
-  .color-example
-    dimensions = 1em
-    margins = 0.25em
-    border-radius: 5px
-    border-color: black
-    border-style: solid
-    display: inline-block
-    height: dimensions
-    width: dimensions
-    margin-left: margins
-    margin-right: margins
-  .hint
-    font-size: 0.75em
-    color: DimGray
-</style>
