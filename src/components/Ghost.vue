@@ -9,6 +9,10 @@
   )
     g(:stroke='secondaryColor')
       path(:d='ghostBody')
+      g(:fill='tertiaryColor')
+        circle(cx='55' cy='45' r='10')
+        circle(cx='95' cy='45' r='10')
+        ellipse(:cx='viewBoxWidth / 2' cy='80' rx='10' ry='15')
 </template>
 
 <script lang='ts'>
@@ -25,6 +29,7 @@ export default class Ghost extends Vue {
   @Prop({type: Number, default: 45}) readonly width!: number;
   @Prop({type: String, default: 'ghostwhite'}) readonly primaryColor!: string;
   @Prop({type: String, default: 'whitesmoke'}) readonly secondaryColor!: string;
+  @Prop({type: String, default: 'slategray'}) readonly tertiaryColor!: string;
   @Prop({type: String, default: 'ghost'}) readonly svgName!: string;
 
   readonly viewBoxHeight = 150;
